@@ -9,10 +9,10 @@ import {
 // import { connect } from 'react-redux'
 
 import Loading from '@/components/common/loading/loading';
-import Details from './products/details';
-import List from './products/list';
-import Home from './home';
-import Demo from './demo';
+import Details from '@/views/details';
+import List from '@/views/list';
+import Navpage from '@/views/navpage';
+import Demo from '@/views/demo';
 
 import { createBrowserHistory } from "history";
 const history = createBrowserHistory();
@@ -34,9 +34,9 @@ class App extends Component {
               <Switch>
                 <Route path="/details" component={Details} history={history} />
                 <Route path="/list" component={List} history={history} />
-                <Route path="/home" component={Home} history={history} />
+                <Route path="/navpage" component={Navpage} history={history} />
                 <Route path="/demo" component={Demo} history={history} />
-                <Redirect to="/home" />
+                <Redirect to="/navpage" />
               </Switch>
             </Suspense>
           </main>

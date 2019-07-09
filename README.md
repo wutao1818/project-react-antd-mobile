@@ -66,3 +66,14 @@ This section has moved here: https://facebook.github.io/create-react-app/docs/de
 ### `npm run build` fails to minify
 
 This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+
+### app.test.js
+import React from 'react';
+import ReactDOM from 'react-dom';
+import App from './router';
+
+it('renders without crashing', () => {
+  const div = document.createElement('div');
+  ReactDOM.render(<App />, div);
+  ReactDOM.unmountComponentAtNode(div);
+});
