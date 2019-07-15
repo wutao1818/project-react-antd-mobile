@@ -89,7 +89,6 @@ class PriceWrap extends React.Component {
             arrDom.push(item)
           }
         });
-
       }else if( isChecked && !searchText ){
         apiData.forEach((item)=> {
           const hasChecked = filterCheck(isChecked,item.stocked);
@@ -106,7 +105,6 @@ class PriceWrap extends React.Component {
           }
         });
       }
-
     }
 
     return <div>

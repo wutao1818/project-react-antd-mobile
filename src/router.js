@@ -1,4 +1,4 @@
-import React, { Component, Suspense } from 'react'
+import React, { Component, Suspense, lazy } from 'react'
 import {
   BrowserRouter as Router,
   Route,
@@ -8,17 +8,20 @@ import {
 
 // import { connect } from 'react-redux'
 
+// 引入页面过渡的loading组件
 import Loading from '@/components/common/loading/loading';
-import Details from '@/views/details';
-import List from '@/views/list';
-import Navpage from '@/views/navpage';
-import Demo from '@/views/demos/demo';
-import FormDemo from '@/views/demos/formDemo';
-import BoilingVerdict from '@/views/demos/boilingVerdict';
-import Price from '@/views/demos/price';
 
 import { createBrowserHistory } from "history";
 const history = createBrowserHistory();
+
+// 引入懒加载路由
+const Details = lazy(() => import('@/views/details'));
+const List = lazy(() => import('@/views/list'));
+const Navpage = lazy(() => import('@/views/navpage'));
+const Demo = lazy(() => import('@/views/demos/demo'));
+const FormDemo = lazy(() => import('@/views/demos/formDemo'));
+const BoilingVerdict = lazy(() => import('@/views/demos/boilingVerdict'));
+const Price = lazy(() => import('@/views/demos/price'));
 
 class App extends Component {
   constructor(props) {
