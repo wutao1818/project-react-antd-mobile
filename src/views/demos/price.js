@@ -83,7 +83,7 @@ class PriceWrap extends React.Component {
       arrDom = apiData;
     }else{
       if( searchText && !isChecked ){
-        apiData.map((item)=> {
+        apiData.forEach((item)=> {
           const hasText = filterText(searchText,item.name);
           if(hasText){
             arrDom.push(item)
@@ -91,14 +91,14 @@ class PriceWrap extends React.Component {
         });
 
       }else if( isChecked && !searchText ){
-        apiData.map((item)=> {
+        apiData.forEach((item)=> {
           const hasChecked = filterCheck(isChecked,item.stocked);
           if(hasChecked){
             arrDom.push(item)
           }
         });
       }else{
-        apiData.map((item)=> {
+        apiData.forEach((item)=> {
           const hasText = filterText(searchText,item.name);
           const hasChecked = filterCheck(isChecked,item.stocked);
           if( hasText && hasChecked ){
