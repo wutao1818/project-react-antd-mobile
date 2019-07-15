@@ -1,5 +1,5 @@
 import React from 'react'
-import '@/assets/App.scss';
+import '@/assets/style/App.scss';
 import {
   NavLink
 } from 'react-router-dom'
@@ -13,16 +13,25 @@ class Home extends React.Component {
         <Header history={history} docTitle="首页" />
         <section>
           <div className="home-wrap">
-            <NavLink className="home-item" to="/details">去详情页</NavLink>
+            <NavLink className="home-item" to="/details">详情页</NavLink>
           </div>
           <div className="home-wrap">
-            <NavLink className="home-item" to="/list">去列表页</NavLink>
+            <NavLink className="home-item" to="/list">列表页</NavLink>
           </div>
           <div className="home-wrap">
-            <NavLink className="home-item" to="/demo">去测试页</NavLink>
+            <NavLink className="home-item" to="/demo">测试页</NavLink>
           </div>
           <div className="home-wrap">
-            <NavLink className="home-item" to="/home">去首页</NavLink>
+            <NavLink className="home-item" to="/formDemo">表单demo页</NavLink>
+          </div>
+          <div className="home-wrap">
+            <NavLink className="home-item" to="/boilingVerdict">温度状态提升demo页</NavLink>
+          </div>
+          <div className="home-wrap">
+            <NavLink className="home-item" to="/price">价格测试demo页</NavLink>
+          </div>
+          <div className="home-wrap">
+            <NavLink className="home-item" to="/home">首页</NavLink>
           </div>
         </section>
       </div>

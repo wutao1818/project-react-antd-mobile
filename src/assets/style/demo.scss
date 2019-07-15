@@ -1,0 +1,32 @@
+$txt-color: #fff;
+$txt-color-000: #000;
+$txt-color-red: red;
+.form-wrap{
+  form{
+    width: 100%;
+    font-size: 20px;
+    label{
+      display: block;
+      color: $txt-color;
+    }
+    input{
+      height: 28px;
+      line-height: 28px;
+    }
+    button{
+      font-size: 20px;
+    }
+    textarea{
+      width: 80%;
+      height: 200px;
+    }
+  }
+}
+.price-title{
+  font-weight: bold;
+  font-size: 18px;
+  color: $txt-color-000;
+}
+.price-title-red{
+  color: $txt-color-red;
+}

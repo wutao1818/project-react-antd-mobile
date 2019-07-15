@@ -12,7 +12,10 @@ import Loading from '@/components/common/loading/loading';
 import Details from '@/views/details';
 import List from '@/views/list';
 import Navpage from '@/views/navpage';
-import Demo from '@/views/demo';
+import Demo from '@/views/demos/demo';
+import FormDemo from '@/views/demos/formDemo';
+import BoilingVerdict from '@/views/demos/boilingVerdict';
+import Price from '@/views/demos/price';
 
 import { createBrowserHistory } from "history";
 const history = createBrowserHistory();
@@ -36,6 +39,10 @@ class App extends Component {
                 <Route path="/list" component={List} history={history} />
                 <Route path="/navpage" component={Navpage} history={history} />
                 <Route path="/demo" component={Demo} history={history} />
+                <Route path="/formDemo" component={FormDemo} history={history} />
+                <Route path="/boilingVerdict" component={BoilingVerdict} history={history} />
+                <Route path="/boilingVerdict" component={BoilingVerdict} history={history} />
+                <Route path="/price" component={Price} history={history} />
                 <Redirect to="/navpage" />
               </Switch>
             </Suspense>
