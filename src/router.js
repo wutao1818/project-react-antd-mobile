@@ -1,6 +1,7 @@
 import React, { Component, Suspense, lazy } from 'react'
 import {
   BrowserRouter as Router,
+  BrowserRouter,
   Route,
   Switch,
   Redirect,
@@ -37,17 +38,20 @@ class App extends Component {
         <div className="App">
           <main>
             <Suspense fallback={<Loading />}>
-              <Switch>
-                <Route path="/details" component={Details} history={history} />
-                <Route path="/list" component={List} history={history} />
-                <Route path="/navpage" component={Navpage} history={history} />
-                <Route path="/demo" component={Demo} history={history} />
-                <Route path="/formDemo" component={FormDemo} history={history} />
-                <Route path="/boilingVerdict" component={BoilingVerdict} history={history} />
-                <Route path="/boilingVerdict" component={BoilingVerdict} history={history} />
-                <Route path="/price" component={Price} history={history} />
-                <Redirect to="/navpage" />
-              </Switch>
+              {/*这里设置项目上下文,即根路径名称*/}
+              <BrowserRouter basename="/test">
+                <Switch>
+                  <Route path="/details" component={Details} history={history} />
+                  <Route path="/list" component={List} history={history} />
+                  <Route path="/home" component={Navpage} history={history} />
+                  <Route path="/demo" component={Demo} history={history} />
+                  <Route path="/formDemo" component={FormDemo} history={history} />
+                  <Route path="/boilingVerdict" component={BoilingVerdict} history={history} />
+                  <Route path="/boilingVerdict" component={BoilingVerdict} history={history} />
+                  <Route path="/price" component={Price} history={history} />
+                  <Redirect to="/home" />
+                </Switch>
+              </BrowserRouter>
             </Suspense>
           </main>
         </div>

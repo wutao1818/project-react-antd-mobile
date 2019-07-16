@@ -33,12 +33,13 @@ function filterCheck(flag,stocked){
 // 头部搜索组件
 class SearchComp extends React.Component {
   render() {
+    const { onInTextChange, onInStockChange } = this.props;
     return <div>
       <div>
-        <input type="text" placeholder="请输入进行搜索" onChange={this.props.onInTextChange} />
+        <input type="text" placeholder="请输入进行搜索" onChange={onInTextChange} />
       </div>
       <div>
-        <input type="checkbox" onChange={this.props.onInStockChange} />只显示有货的的商品
+        <input type="checkbox" onChange={onInStockChange} />只显示有货的的商品
       </div>
     </div>
   }
@@ -76,9 +77,7 @@ class PriceList extends React.Component {
 class PriceWrap extends React.Component {
   render() {
     let arrDom = [];
-    let apiData = this.props.apiData;
-    const searchText = this.props.searchText;
-    const isChecked = this.props.isChecked;
+    let { apiData, searchText, isChecked } = this.props;
     if( searchText==='' && !isChecked ){
       arrDom = apiData;
     }else{
@@ -136,19 +135,20 @@ class Price extends React.Component {
   }
   render() {
     const { history } = this.props;
+    const { searchText, isChecked } = this.state;
     return (
       <div className="demoApp">
         <Header history={history} docTitle="价格测试demo页" />
         <section>
           <SearchComp
-            searchText={this.state.searchText}
-            isChecked={this.state.isChecked}
+            searchText={searchText}
+            isChecked={isChecked}
             onInTextChange={this.handleInTextChange}
             onInStockChange={this.handleInStockChange}
           />
           <PriceWrap
-            searchText={this.state.searchText}
-            isChecked={this.state.isChecked}
+            searchText={searchText}
+            isChecked={isChecked}
             apiData={apiDataList}
           />
         </section>
