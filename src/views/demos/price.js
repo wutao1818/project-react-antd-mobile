@@ -1,6 +1,6 @@
-import React from 'react'
-import '@/assets/style/App.scss';
+import React from 'react';
 import Header from '@/components/common/header';
+import '@/assets/style/App.scss';
 import '@/assets/style/demo.scss';
 
 // 数据源
@@ -24,10 +24,7 @@ function filterText(str,name){
 
 // 过滤勾选框
 function filterCheck(flag,stocked){
-  if(flag && stocked){
-    return true;
-  }
-  return false;
+  return (flag && stocked) ? true : false;
 }
 
 // 头部搜索组件

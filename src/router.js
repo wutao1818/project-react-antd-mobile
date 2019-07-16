@@ -23,6 +23,7 @@ const Demo = lazy(() => import('@/views/demos/demo'));
 const FormDemo = lazy(() => import('@/views/demos/formDemo'));
 const BoilingVerdict = lazy(() => import('@/views/demos/boilingVerdict'));
 const Price = lazy(() => import('@/views/demos/price'));
+const Todolist = lazy(() => import('@/views/demos/todolist'));
 
 class App extends Component {
   constructor(props) {
@@ -49,6 +50,7 @@ class App extends Component {
                   <Route path="/boilingVerdict" component={BoilingVerdict} history={history} />
                   <Route path="/boilingVerdict" component={BoilingVerdict} history={history} />
                   <Route path="/price" component={Price} history={history} />
+                  <Route path="/todolist" component={Todolist} history={history} />
                   <Redirect to="/home" />
                 </Switch>
               </BrowserRouter>

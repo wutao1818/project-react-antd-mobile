@@ -31,6 +31,9 @@ class Home extends React.Component {
             <NavLink className="home-item" to="/price">价格测试demo页</NavLink>
           </div>
           <div className="home-wrap">
+            <NavLink className="home-item" to="/todolist">todolist页</NavLink>
+          </div>
+          <div className="home-wrap">
             <NavLink className="home-item" to="/home">首页</NavLink>
           </div>
         </section>
