@@ -6,7 +6,6 @@ import {
   Switch,
   Redirect,
 } from 'react-router-dom';
-
 // import { connect } from 'react-redux'
 
 // 引入页面过渡的loading组件
@@ -16,7 +15,6 @@ import { createBrowserHistory } from "history";
 const history = createBrowserHistory();
 
 // 引入懒加载路由
-const Details = lazy(() => import('@/views/details'));
 const List = lazy(() => import('@/views/list'));
 const Navpage = lazy(() => import('@/views/navpage'));
 const Demo = lazy(() => import('@/views/demos/demo'));
@@ -42,7 +40,6 @@ class App extends Component {
               {/*这里设置项目上下文,即根路径名称*/}
               <BrowserRouter basename="/test">
                 <Switch>
-                  <Route path="/details" component={Details} history={history} />
                   <Route path="/list" component={List} history={history} />
                   <Route path="/home" component={Navpage} history={history} />
                   <Route path="/demo" component={Demo} history={history} />

@@ -13,9 +13,6 @@ class Home extends React.Component {
         <Header history={history} docTitle="首页" />
         <section>
           <div className="home-wrap">
-            <NavLink className="home-item" to="/details">详情页</NavLink>
-          </div>
-          <div className="home-wrap">
             <NavLink className="home-item" to="/list">列表页</NavLink>
           </div>
           <div className="home-wrap">

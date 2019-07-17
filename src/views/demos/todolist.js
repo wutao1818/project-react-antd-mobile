@@ -2,6 +2,9 @@ import React from 'react';
 import Header from '@/components/common/header';
 import '@/assets/style/App.scss';
 
+import { hostName } from '@/api/config';
+console.log(hostName);
+
 class Todowrap extends React.Component {
   constructor(props){
     super(props);
@@ -19,29 +22,33 @@ class Todowrap extends React.Component {
     this.setState({text: value});
   }
 
+  // 添加一个todo
   addTodo(){
-    const { text, arr } = this.state;
+    const { text } = this.state;
     if(text){
-      arr.push({text});
+      this.setState(state => ({
+        arr: [...this.state.arr, {text}],
+        text: ''
+      }));
     }
-    this.setState({
-      arr,
-      text: ''
-    });
   }
 
   // 单个删除
   onDeleteEach(index){
-    const { arr } = this.state;
-    arr.splice(index,1);
-    this.setState({arr});
+    const newArr = this.state.arr;
+    newArr.splice(index,1);
+    this.setState({
+      arr: newArr
+    });
   }
 
   // 删除最后一项
   deleteTodo(){
     const { arr } = this.state;
-    arr.splice(arr.length-1,1);
-    this.setState({arr});
+    const newArr = arr.slice(0,arr.length-1);
+    this.setState({
+      arr: newArr
+    });
   }
 
   render(){
