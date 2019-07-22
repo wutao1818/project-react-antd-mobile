@@ -1,4 +1,4 @@
-import React from 'react'
+import React from 'react';
 import '@/assets/style/App.scss';
 import {
   NavLink
@@ -29,6 +29,12 @@ class Home extends React.Component {
           </div>
           <div className="home-wrap">
             <NavLink className="home-item" to="/todolist">todolist页</NavLink>
+          </div>
+          <div className="home-wrap">
+            <NavLink className="home-item" to="/context">context页</NavLink>
+          </div>
+          <div className="home-wrap">
+            <NavLink className="home-item" to="/fragments">fragments页</NavLink>
           </div>
           <div className="home-wrap">
             <NavLink className="home-item" to="/home">首页</NavLink>
