@@ -49,19 +49,17 @@ function routerHoc(WrappedComponent,routerList) {
       })
       // ... 并使用新数据渲染被包装的组件!
       // 请注意，我们可能还会传递其他属性
-      return navList;
+      return navList
     }
   }
 }
 
 function routerItem(props){
-  return (
-    <Route path={props.path} component={props.component} history={history} />
-  )
+  return <Route path={props.path} component={props.component} history={history} />
 }
 
 const RouterHoc = routerHoc(routerItem,[
-  {to: "/home", component: Navpage},
+  {to: "/home", component: Navpage, isRedirect: true},
   {to: "/lifeCycle", component: LifeCycle},
   {to: "/hoc", component: Hoc},
   {to: "/list", component: List},
@@ -94,8 +92,10 @@ class App extends Component {
               {/*这里设置项目上下文,即根路径名称*/}
               <BrowserRouter basename="/test">
                 <Switch>
-                  <RouterHoc/>
-                  <Redirect to="/home" />
+                  <React.Fragment>
+                    <RouterHoc/>
+                    <Redirect to="/home" />;
+                  </React.Fragment>
                 </Switch>
               </BrowserRouter>
             </Suspense>
