@@ -59,7 +59,7 @@ function routerItem(props){
 }
 
 const RouterHoc = routerHoc(routerItem,[
-  {to: "/home", component: Navpage, isRedirect: true},
+  {to: "/home", component: Navpage},
   {to: "/lifeCycle", component: LifeCycle},
   {to: "/hoc", component: Hoc},
   {to: "/list", component: List},
