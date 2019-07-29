@@ -28,6 +28,55 @@ const Optimizing = lazy(() => import('@/views/demos/optimizing'));
 const Refs = lazy(() => import('@/views/demos/refs'));
 const RenderProps = lazy(() => import('@/views/demos/renderProps'));
 const LifeCycle = lazy(() => import('@/views/demos/lifeCycle'));
+const Hoc = lazy(() => import('@/views/demos/hoc'));
+
+
+function routerHoc(WrappedComponent,routerList) {
+  return class extends React.Component {
+    constructor(props) {
+      super(props);
+      this.state = {
+        routerList: routerList
+      };
+    }
+
+    render() {
+      const { routerList } = this.state;
+      const navList = routerList.map((item)=>{
+        return (
+          <WrappedComponent key={item.to} path={item.to} component={item.component} />
+        )
+      })
+      // ... 并使用新数据渲染被包装的组件!
+      // 请注意，我们可能还会传递其他属性
+      return navList;
+    }
+  }
+}
+
+function routerItem(props){
+  return (
+    <Route path={props.path} component={props.component} history={history} />
+  )
+}
+
+const RouterHoc = routerHoc(routerItem,[
+  {to: "/home", component: Navpage},
+  {to: "/lifeCycle", component: LifeCycle},
+  {to: "/hoc", component: Hoc},
+  {to: "/list", component: List},
+  {to: "/demo", component: Demo},
+  {to: "/formDemo", component: FormDemo},
+  {to: "/boilingVerdict", component: BoilingVerdict},
+  {to: "/price", component: Price},
+  {to: "/todolist", component: Todolist},
+  {to: "/context", component: Context},
+  {to: "/fragments", component: Fragments},
+  {to: "/optimizing", component: Optimizing},
+  {to: "/refs", component: Refs},
+  {to: "/renderProps", component: RenderProps}
+]);
+
 
 class App extends Component {
   constructor(props) {
@@ -45,20 +94,7 @@ class App extends Component {
               {/*这里设置项目上下文,即根路径名称*/}
               <BrowserRouter basename="/test">
                 <Switch>
-                  <Route path="/home" component={Navpage} history={history} />
-                  <Route path="/lifeCycle" component={LifeCycle} history={history} />
-                  <Route path="/list" component={List} history={history} />
-                  <Route path="/demo" component={Demo} history={history} />
-                  <Route path="/formDemo" component={FormDemo} history={history} />
-                  <Route path="/boilingVerdict" component={BoilingVerdict} history={history} />
-                  <Route path="/boilingVerdict" component={BoilingVerdict} history={history} />
-                  <Route path="/price" component={Price} history={history} />
-                  <Route path="/todolist" component={Todolist} history={history} />
-                  <Route path="/context" component={Context} history={history} />
-                  <Route path="/fragments" component={Fragments} history={history} />
-                  <Route path="/optimizing" component={Optimizing} history={history} />
-                  <Route path="/refs" component={Refs} history={history} />
-                  <Route path="/renderProps" component={RenderProps} history={history} />
+                  <RouterHoc/>
                   <Redirect to="/home" />
                 </Switch>
               </BrowserRouter>

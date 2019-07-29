@@ -74,7 +74,7 @@ class Todolist extends React.Component {
     const { history } = this.props;
     return (
         <div className="demoApp">
-          <Header history={history} docTitle="价格测试demo页" />
+          <Header history={history} docTitle="todolist页" />
           <section>
             <h1>请输入内容以创建你的todolist</h1>
             <Todowrap />

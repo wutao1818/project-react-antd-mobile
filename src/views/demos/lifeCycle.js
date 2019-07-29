@@ -13,6 +13,7 @@ class LifeCycle extends React.Component {
     this.updateState = this.updateState.bind(this)
   }
 
+  // 自定义点击事件
   updateState() {
     this.setState({
       testData: 'hahahahaha'
@@ -21,19 +22,19 @@ class LifeCycle extends React.Component {
     })
   }
 
-  // 组件挂载前
+  // 生命周期-组件挂载前
   componentDidMount(){
     console.log('组件即将被挂载！')
   }
 
-  // 组件更新前
+  // 生命周期-组件更新前
   componentDidUpdate(){
     // 这里可以获取 state 被修改的之后的值！！！
     console.log(this.state.testData)
     console.log('组件即将被更新！')
   }
 
-  // 组件销毁前
+  // 生命周期-组件销毁前
   componentWillUnmount(){
     console.log('组件即将被销毁！')
   }
