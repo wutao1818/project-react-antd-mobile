@@ -66,6 +66,7 @@
   "scripts": {
     "start": "cross-env REACT_APP_ENV=dev node scripts/start.js",
     "build": "node scripts/build.js",
+    "flow": "flow",
     "build:uat": "cross-env REACT_APP_ENV=uat node scripts/build.js",
     "test": "node scripts/test.js"
   },
@@ -133,5 +134,8 @@
     "presets": [
       "react-app"
     ]
+  },
+  "devDependencies": {
+    "flow-bin": "^0.104.0"
   }
 }

@@ -24,6 +24,10 @@ const Price = lazy(() => import('@/views/demos/price'));
 const Todolist = lazy(() => import('@/views/demos/todolist'));
 const Context = lazy(() => import('@/views/demos/context'));
 const Fragments = lazy(() => import('@/views/demos/fragments'));
+const Optimizing = lazy(() => import('@/views/demos/optimizing'));
+const Refs = lazy(() => import('@/views/demos/refs'));
+const RenderProps = lazy(() => import('@/views/demos/renderProps'));
+const LifeCycle = lazy(() => import('@/views/demos/lifeCycle'));
 
 class App extends Component {
   constructor(props) {
@@ -32,7 +36,6 @@ class App extends Component {
       isDrawer: false
     }
   }
-
   render() {
     return (
       <Router>
@@ -42,8 +45,9 @@ class App extends Component {
               {/*这里设置项目上下文,即根路径名称*/}
               <BrowserRouter basename="/test">
                 <Switch>
-                  <Route path="/list" component={List} history={history} />
                   <Route path="/home" component={Navpage} history={history} />
+                  <Route path="/lifeCycle" component={LifeCycle} history={history} />
+                  <Route path="/list" component={List} history={history} />
                   <Route path="/demo" component={Demo} history={history} />
                   <Route path="/formDemo" component={FormDemo} history={history} />
                   <Route path="/boilingVerdict" component={BoilingVerdict} history={history} />
@@ -52,6 +56,9 @@ class App extends Component {
                   <Route path="/todolist" component={Todolist} history={history} />
                   <Route path="/context" component={Context} history={history} />
                   <Route path="/fragments" component={Fragments} history={history} />
+                  <Route path="/optimizing" component={Optimizing} history={history} />
+                  <Route path="/refs" component={Refs} history={history} />
+                  <Route path="/renderProps" component={RenderProps} history={history} />
                   <Redirect to="/home" />
                 </Switch>
               </BrowserRouter>
