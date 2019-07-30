@@ -7,6 +7,7 @@ import {
   Redirect,
 } from 'react-router-dom';
 // import { connect } from 'react-redux'
+import Footer from './components/common/footer';
 
 // 引入页面过渡的loading组件
 import Loading from '@/components/common/loading/loading';
@@ -94,9 +95,10 @@ class App extends Component {
                 <Switch>
                   <React.Fragment>
                     <RouterHoc/>
-                    <Redirect to="/home" />;
+                    <Redirect to="/home" />
                   </React.Fragment>
                 </Switch>
+                <Footer/>
               </BrowserRouter>
             </Suspense>
           </main>

@@ -1,41 +1,9 @@
 import React from 'react';
 import '@/assets/style/App.scss';
-import {
-  NavLink
-} from 'react-router-dom'
+
 import Header from '@/components/common/header';
-
-function hocNavbar(WrappedComponent,routerList) {
-  return class extends React.Component {
-    constructor(props) {
-      super(props);
-      this.state = {
-        routerList: routerList
-      };
-    }
-
-    render() {
-      const { routerList } = this.state;
-      const navList = routerList.map((item)=>{
-        return (
-          <WrappedComponent key={item.to} data={item} />
-        )
-      })
-      // ... 并使用新数据渲染被包装的组件!
-      // 请注意，我们可能还会传递其他属性
-      return navList;
-    }
-  }
-}
-
-function subNavbar(props){
-  const { data } = props;
-  return (
-    <div className="home-wrap">
-      <NavLink className="home-item" style={data.style} to={data.to}>{data.name}</NavLink>
-    </div>
-  )
-}
+import hocNavbar from '@/components/common/nav/hocNavbar';
+import subNavbar from '@/components/common/nav/subNavbar';
 
 const HocNavbar = hocNavbar(subNavbar,[
   {to: "/home", name: '首页'},
