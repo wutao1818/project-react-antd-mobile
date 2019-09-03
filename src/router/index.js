@@ -1,4 +1,4 @@
-import React, { Component, Suspense } from 'react'
+import React, {Component, Suspense} from 'react';
 import {
   BrowserRouter as Router,
   BrowserRouter,
@@ -8,15 +8,13 @@ import {
 } from 'react-router-dom';
 // import { connect } from 'react-redux'
 import Footer from '@/components/common/footer';
-
 // 引入页面过渡的loading组件
 import Loading from '@/components/common/loading/loading';
 import routes from './routes';
-
-import { createBrowserHistory } from "history";
+import {createBrowserHistory} from "history";
 const history = createBrowserHistory();
 
-function routerHoc(WrappedComponent,routerList) {
+function routerHoc(WrappedComponent, routerList) {
   return class extends React.Component {
     constructor(props) {
       super(props);
@@ -26,10 +24,10 @@ function routerHoc(WrappedComponent,routerList) {
     }
 
     render() {
-      const { routerList } = this.state;
-      const navList = routerList.map((item)=>{
+      const {routerList} = this.state;
+      const navList = routerList.map((item) => {
         return (
-          <WrappedComponent key={item.to} path={item.to} component={item.component} />
+          <WrappedComponent key={item.to} path={item.to} component={item.component}/>
         )
       })
       // ... 并使用新数据渲染被包装的组件!
@@ -39,10 +37,11 @@ function routerHoc(WrappedComponent,routerList) {
   }
 }
 
-function routerItem(props){
-  return <Route path={props.path} component={props.component} history={history} />
+function routerItem(props) {
+  return <Route path={props.path} component={props.component} history={history}/>
 }
-const RouterHoc = routerHoc(routerItem,routes);
+
+const RouterHoc = routerHoc(routerItem, routes);
 
 
 class App extends Component {
@@ -52,23 +51,23 @@ class App extends Component {
       isDrawer: false
     }
   }
+
   render() {
     return (
       <Router>
         <div className="App">
           <main>
             <Suspense fallback={<Loading />}>
-              {/*这里设置项目上下文,即根路径名称*/}
               <BrowserRouter basename="/test">
                 <Switch>
                   <React.Fragment>
-										<div className="demoApp" id="demoApp">
-											<RouterHoc/>
-										</div>	
-                    <Redirect to="/home" />
+                    <div className="demoApp">
+                      <RouterHoc/>
+                    </div>
+                    <Redirect to="/home"/>
                   </React.Fragment>
                 </Switch>
-                <Footer/>
+                <Footer history={history} />
               </BrowserRouter>
             </Suspense>
           </main>

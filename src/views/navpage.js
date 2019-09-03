@@ -1,5 +1,4 @@
 import React from 'react';
-import '@/assets/style/App.scss';
 
 import Header from '@/components/common/header';
 import hocNavbar from '@/components/common/nav/hocNavbar';

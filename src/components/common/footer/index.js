@@ -1,36 +1,147 @@
 import React from 'react';
-
-import hocNavbar from '@/components/common/nav/hocNavbar';
-import { NavLink } from 'react-router-dom';
-
-import './index.scss';
-
-function footerItems(props){
-  const { data } = props;
-	return (
-		<div className="home-wrap">
-			<NavLink className="home-item" style={data.style} to={data.to}>
-				{data.name}
-			</NavLink>
-		</div>	
-	)
-}
-
-const HocNavbar = hocNavbar(footerItems,[
-  {to: "/home", name: '首页'},
-  {to: "/hoc", name: '高阶组件'},
-  {to: "/price", name: '价格测试'},
-  {to: "/todolist", name: 'todolist测试'},
-]);
+import {TabBar} from 'antd-mobile';
+import {withRouter} from 'react-router-dom';
 
 class Footer extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      selectedTab: 'redTab',
+      hidden: false,
+      fullScreen: false,
+    };
+  }
+
   render() {
-    return(
-      <footer>
-        <HocNavbar/>
+    const {history} = this.props;
+    return (
+      <footer className="footer">
+        <TabBar
+          unselectedTintColor="#949494"
+          tintColor="#33A3F4"
+          barTintColor="white"
+          hidden={this.state.hidden}
+        >
+          <TabBar.Item
+            title="首页"
+            key="首页"
+            icon={<div style={{
+              width: '22px',
+              height: '22px',
+              background: 'url(https://zos.alipayobjects.com/rmsportal/sifuoDUQdAFKAVcFGROC.svg) center center /  21px 21px no-repeat'
+            }}
+            />
+            }
+            selectedIcon={<div style={{
+              width: '22px',
+              height: '22px',
+              background: 'url(https://zos.alipayobjects.com/rmsportal/iSrlOTqrKddqbOmlvUfq.svg) center center /  21px 21px no-repeat'
+            }}
+            />
+            }
+            selected={this.state.selectedTab === 'blueTab'}
+            badge={1}
+            onPress={() => {
+              this.setState({
+                selectedTab: 'blueTab',
+              });
+              history.push(`/home`);
+            }}
+            data-seed="logId"
+          >
+          </TabBar.Item>
+
+          <TabBar.Item
+            title="高阶组件"
+            key="高阶组件"
+            icon={<div style={{
+              width: '22px',
+              height: '22px',
+              background: 'url(https://zos.alipayobjects.com/rmsportal/sifuoDUQdAFKAVcFGROC.svg) center center /  21px 21px no-repeat'
+            }}
+            />
+            }
+            selectedIcon={<div style={{
+              width: '22px',
+              height: '22px',
+              background: 'url(https://zos.alipayobjects.com/rmsportal/iSrlOTqrKddqbOmlvUfq.svg) center center /  21px 21px no-repeat'
+            }}
+            />
+            }
+            selected={this.state.selectedTab === 'redTab'}
+            badge={1}
+            onPress={() => {
+              this.setState({
+                selectedTab: 'redTab',
+              });
+              history.push(`/hoc`);
+            }}
+            data-seed="logId"
+          >
+          </TabBar.Item>
+
+          <TabBar.Item
+            title="价格测试"
+            key="价格测试"
+            icon={<div style={{
+              width: '22px',
+              height: '22px',
+              background: 'url(https://zos.alipayobjects.com/rmsportal/sifuoDUQdAFKAVcFGROC.svg) center center /  21px 21px no-repeat'
+            }}
+            />
+            }
+            selectedIcon={<div style={{
+              width: '22px',
+              height: '22px',
+              background: 'url(https://zos.alipayobjects.com/rmsportal/iSrlOTqrKddqbOmlvUfq.svg) center center /  21px 21px no-repeat'
+            }}
+            />
+            }
+            selected={this.state.selectedTab === 'greenTab'}
+            badge={1}
+            onPress={() => {
+              this.setState({
+                selectedTab: 'greenTab',
+              });
+              history.push(`/price`);
+            }}
+            data-seed="logId"
+          >
+          </TabBar.Item>
+
+          <TabBar.Item
+            title="todolist测试"
+            key="todolist测试"
+            icon={<div style={{
+              width: '22px',
+              height: '22px',
+              background: 'url(https://zos.alipayobjects.com/rmsportal/sifuoDUQdAFKAVcFGROC.svg) center center /  21px 21px no-repeat'
+            }}
+            />
+            }
+            selectedIcon={<div style={{
+              width: '22px',
+              height: '22px',
+              background: 'url(https://zos.alipayobjects.com/rmsportal/iSrlOTqrKddqbOmlvUfq.svg) center center /  21px 21px no-repeat'
+            }}
+            />
+            }
+            selected={this.state.selectedTab === 'yellowTab'}
+            badge={1}
+            onPress={() => {
+              this.setState({
+                selectedTab: 'yellowTab',
+              });
+              history.push(`/todolist`);
+            }}
+            data-seed="logId"
+          >
+          </TabBar.Item>
+
+        </TabBar>
       </footer>
     )
   }
 }
 
-export default Footer;
+export default withRouter(Footer);

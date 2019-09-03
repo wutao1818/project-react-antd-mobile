@@ -9,51 +9,6 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-  monospace;
-}
-
-.App {
-  //background: #4e6186;
-  background: #764abc;
-  color: $txt-color;
-  min-height: 100vh;
-  .block{
-    padding:10px;
-    background: #567549;
-    margin: 5px 0;
-    span{
-      color: #f1c183;
-      font-size: 24px;
-      cursor: pointer;
-      border: 1px solid;
-      border-radius: 6px;
-      padding: 10px;
-      display: inline-block;
-    }
-  }
-}
-
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 28vmin;
-  pointer-events: none;
-}
-
-.App-header {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
@@ -63,17 +18,40 @@ code {
   }
 }
 
-.demoApp{
-	padding-top: 50px;
-	padding-bottom: 40px;
-  section{
+.App {
+  background: #764abc;
+  color: $txt-color;
+  width: 375px;
+  min-height: 100vh;
+  .am-navbar-left-icon {
+    animation: App-logo-spin infinite 2s linear;
+    pointer-events: none;
+  }
+  .am-activity-indicator-tip{
+    font-size: 24px;
+    color: #fff;
+    opacity: 1;
+  }
+  .footer{
+    width: 100%;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+  }
+}
+
+.demoApp {
+  padding-top: 45px;
+  padding-bottom: 40px;
+  min-height: 1000px;
+  section {
     padding: 10px;
   }
-  .block{
-    padding:10px;
+  .block {
+    padding: 10px;
     background: #567549;
     margin: 5px 0;
-    span{
+    span {
       color: #f1c183;
       font-size: 24px;
       cursor: pointer;
@@ -83,19 +61,36 @@ code {
       display: inline-block;
     }
   }
-  .home-wrap{
+  .home-wrap {
     margin: 10px 0;
-    .home-item{
+    .home-item {
       color: $txt-color;
       font-size: 28px;
     }
   }
-  .label-title{
+  .label-title {
     color: orange;
   }
 }
 
 //以下样式是具体页面的，可以挪到具体页面中对应的css
-.clock{
+.clock {
   color: $txt-color;
 }
+
+// demo ==
+$txt-color: #fff;
+$txt-color-000: #000;
+$txt-color-red: red;
+
+.price-title {
+  font-weight: bold;
+  font-size: 18px;
+  color: $txt-color-000;
+}
+
+.price-title-red {
+  color: $txt-color-red;
+}
+
+// demo ==

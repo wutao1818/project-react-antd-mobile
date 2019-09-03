@@ -1,6 +1,5 @@
 import React from 'react';
 import Header from '@/components/common/header';
-import '@/assets/style/App.scss';
 
 import { hostName } from '@/api/config';
 console.log(hostName);

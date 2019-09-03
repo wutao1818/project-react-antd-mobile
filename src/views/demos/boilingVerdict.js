@@ -1,6 +1,5 @@
 import React from 'react';
 import Header from '@/components/common/header';
-import '@/assets/style/demo.scss';
 
 function BoilingVerdict(props) {
   if (props.celsius >= 100) {

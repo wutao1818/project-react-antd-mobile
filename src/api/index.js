@@ -12,7 +12,6 @@ let instance = axios.create({
 });
 
 instance.interceptors.response.use(response => {
-  //欺骗自己的loading动画
   // return new Promise(resolve => {
   //   setTimeout(() => {
   //     resolve(response)

@@ -1,8 +1,6 @@
 import React  from 'react';
 import Header from '@/components/common/header';
-import '@/assets/style/App.scss';
-import '@/assets/style/demo.scss';
-import catImg from '@/assets/cat.png';
+import catImg from '@/assets/img/cat.png';
 
 
 class Cat extends React.Component {

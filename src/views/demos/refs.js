@@ -1,7 +1,5 @@
 import React,{ Component } from 'react';
 import Header from '@/components/common/header';
-import '@/assets/style/App.scss';
-import '@/assets/style/demo.scss';
 
 function CustomTextInputFunction(props) {
   // 这里必须声明 textInput，这样 ref 才可以引用它
@@ -64,7 +62,6 @@ class CustomTextInput extends Component {
       <div>
         <input
           type="text"
-          className={this.state.isFocus ? 'ifIsfocus' :''}
           onBlur={this.onBlurHandle}
           onFocus={this.onFocusHandle}
           ref={this.textInput} />
@@ -95,67 +92,6 @@ class AutoFocusTextInput  extends React.Component {
   }
 }
 
-
-// function CustomTextInput2(props) {
-//   return (
-//     <div>
-//       <input ref={props.inputRef} />
-//     </div>
-//   );
-// }
-
-/*class CustomTextInput2 extends React.Component {
-  constructor(props) {
-    super(props);
-
-    this.textInput2 = null;
-
-    this.setTextInputRef = element => {
-      this.textInput2 = element;
-    };
-
-    this.focusTextInput = () => {
-      // 使用原生 DOM API 使 text 输入框获得焦点
-      if (this.textInput2) this.textInput2.focus();
-    };
-  }
-
-  componentDidMount() {
-    // 组件挂载后，让文本框自动获得焦点
-    this.focusTextInput();
-  }
-
-  render() {
-    // 使用 `ref` 的回调函数将 text 输入框 DOM 节点的引用存储到 React
-    // 实例上（比如 this.textInput2）
-    return (
-      <div>
-        <input
-          type="text"
-          ref={this.setTextInputRef}
-        />
-        <input
-          type="button"
-          value="Focus the text input"
-          onClick={this.focusTextInput}
-        />
-      </div>
-    );
-  }
-}
-
-class Parent extends React.Component {
-  render() {
-    return (
-      <CustomTextInput2
-        inputRef={el => this.inputElement = el}
-      />
-    );
-  }
-}
-*/
-
-
 class Refs extends Component {
   render (){
     const { history } = this.props;
@@ -168,8 +104,6 @@ class Refs extends Component {
             <CustomTextInputFunction/>
             <h1>AutoFocusTextInput</h1>
             <AutoFocusTextInput/>
-            {/*<h1>Parent</h1>*/}
-            {/*<Parent/>*/}
           </section>
         </React.Fragment>
       </React.Fragment>
