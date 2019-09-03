@@ -1,10 +1,22 @@
 import React from 'react';
-import './index.scss';
 
 import hocNavbar from '@/components/common/nav/hocNavbar';
-import subNavbar from '@/components/common/nav/subNavbar';
+import { NavLink } from 'react-router-dom';
 
-const HocNavbar = hocNavbar(subNavbar,[
+import './index.scss';
+
+function footerItems(props){
+  const { data } = props;
+	return (
+		<div className="home-wrap">
+			<NavLink className="home-item" style={data.style} to={data.to}>
+				{data.name}
+			</NavLink>
+		</div>	
+	)
+}
+
+const HocNavbar = hocNavbar(footerItems,[
   {to: "/home", name: '首页'},
   {to: "/hoc", name: '高阶组件'},
   {to: "/price", name: '价格测试'},

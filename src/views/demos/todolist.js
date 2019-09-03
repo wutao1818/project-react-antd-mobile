@@ -73,13 +73,13 @@ class Todolist extends React.Component {
   render() {
     const { history } = this.props;
     return (
-        <div className="demoApp">
+        <React.Fragment>
           <Header history={history} docTitle="todolist页" />
           <section>
             <h1>请输入内容以创建你的todolist</h1>
             <Todowrap />
           </section>
-        </div>
+        </React.Fragment>
       )
   }
 }

@@ -40,37 +40,39 @@ class FormControl extends React.Component {
   render() {
     const { txtValue } = this.state;
     return (
-      <div className="form-wrap">
+      <React.Fragment>
         <Header history={this.props.history} docTitle="表单demo页" />
-        <form onSubmit={this.handleSubmit}>
-          <label>
-            名字:
-            <input type="text" value={this.state.value} onChange={this.handleChange} />
-          </label>
-
-          <label>
-            备注:
-            <textarea value={txtValue} onChange={this.handleTxtareaChange}></textarea>
-          </label>
-
-          <label>
-            选择你喜欢的风味:
-            <select value={this.state.selectValue} onChange={this.handleSelectChange}>
-              <option value="grapefruit">葡萄柚</option>
-              <option value="lime">酸橙</option>
-              <option value="coconut">椰子</option>
-              <option value="mango">芒果</option>
-            </select>
-            <h1>{this.state.selectValue}</h1>
-          </label>
-
-          <label>
-            上传文件：
-            <input type="file" />
-          </label>
-          <button type="submit">提交</button>
-        </form>
-      </div>
+				<section>
+					<form onSubmit={this.handleSubmit}>
+						<label>
+							名字:
+							<input type="text" value={this.state.value} onChange={this.handleChange} />
+						</label>
+					
+						<label>
+							备注:
+							<textarea value={txtValue} onChange={this.handleTxtareaChange}></textarea>
+						</label>
+					
+						<label>
+							选择你喜欢的风味:
+							<select value={this.state.selectValue} onChange={this.handleSelectChange}>
+								<option value="grapefruit">葡萄柚</option>
+								<option value="lime">酸橙</option>
+								<option value="coconut">椰子</option>
+								<option value="mango">芒果</option>
+							</select>
+							<h1>{this.state.selectValue}</h1>
+						</label>
+					
+						<label>
+							上传文件：
+							<input type="file" />
+						</label>
+						<button type="submit">提交</button>
+					</form>
+				</section>
+      </React.Fragment>
     );
   }
 }

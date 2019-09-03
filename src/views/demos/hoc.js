@@ -76,12 +76,12 @@ class Hoc extends React.Component {
   render() {
     const { history } = this.props;
     return (
-      <div className="demoApp">
+      <React.Fragment>
         <Header history={history} docTitle="高阶组件" />
         <h1>React 高阶组件</h1>
         <CommentListWithSubscription/>
         <BlogPostWithSubscription/>
-      </div>
+      </React.Fragment>
     )
   }
 }

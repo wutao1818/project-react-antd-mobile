@@ -82,7 +82,7 @@ class Calculator extends React.Component {
     const fahrenheit = scale === 'c' ? tryConvert(temperature, toFahrenheit) : temperature;
 
     return (
-      <div>
+      <React.Fragment>
         <Header history={this.props.history} docTitle="温度状态提升demo页" />
         <TemperatureInput
           scale="c"
@@ -97,7 +97,7 @@ class Calculator extends React.Component {
         <BoilingVerdict
           celsius={parseFloat(celsius)} />
 
-      </div>
+      </React.Fragment>
     );
   }
 }

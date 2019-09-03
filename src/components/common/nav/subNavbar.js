@@ -1,11 +1,13 @@
 import React from 'react';
-import { NavLink } from 'react-router-dom';
+
+import { Button } from 'antd-mobile';
+import 'antd-mobile/dist/antd-mobile.css';
 
 function subNavbar(props){
-  const { data } = props;
+  const { data, history } = props;
   return (
     <div className="home-wrap">
-      <NavLink className="home-item" style={data.style} to={data.to}>{data.name}</NavLink>
+			<Button onClick={() => history.push(data.to)} type="primary" >{data.name}</Button>
     </div>
   )
 }

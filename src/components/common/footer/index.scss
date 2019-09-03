@@ -5,11 +5,14 @@ footer{
   line-height: 40px;
   text-align: center;
   background: #b38023;
-  display: flex;
+  display: flex!important;
   justify-content: space-between;
   position: fixed;
   left: 0;
   bottom: 0;
+	.home-wrap{
+		width: 100%;
+	}
   a{
     color: $txt-color;
     font-size: 20px;

@@ -42,11 +42,11 @@ class LifeCycle extends React.Component {
   render() {
     const { history, color } = this.props;
     return (
-      <div className="demoApp">
+      <React.Fragment>
         <Header history={history} docTitle="组件的生命周期" />
         <h1 style={{color: color}}>React组件常用生命周期</h1>
         <button onClick={this.updateState}>点击触发更新</button>
-      </div>
+      </React.Fragment>
     )
   }
 }

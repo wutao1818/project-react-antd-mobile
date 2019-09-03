@@ -10,10 +10,11 @@ function hocNavbar(WrappedComponent,routerList) {
     }
 
     render() {
+			const { history } = this.props;
       const { routerList } = this.state;
       const navList = routerList.map((item)=>{
         return (
-          <WrappedComponent key={item.to} data={item} />
+          <WrappedComponent key={item.to} data={item} history={history} />
         )
       })
       // ... 并使用新数据渲染被包装的组件!

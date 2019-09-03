@@ -2,12 +2,20 @@
   "name": "wutao-app",
   "version": "0.1.0",
   "private": true,
+  "scripts": {
+    "start": "cross-env REACT_APP_ENV=dev node scripts/start.js",
+    "build": "node scripts/build.js",
+    "flow": "flow",
+    "build:uat": "cross-env REACT_APP_ENV=uat node scripts/build.js",
+    "test": "node scripts/test.js"
+  },
   "dependencies": {
     "@babel/core": "7.4.3",
     "@babel/runtime": "^7.5.4",
     "@svgr/webpack": "4.1.0",
     "@typescript-eslint/eslint-plugin": "1.6.0",
     "@typescript-eslint/parser": "1.6.0",
+    "antd-mobile": "^2.3.1",
     "axios": "^0.19.0",
     "babel-eslint": "10.0.1",
     "babel-jest": "^24.8.0",
@@ -62,13 +70,6 @@
     "webpack-dev-server": "3.2.1",
     "webpack-manifest-plugin": "2.0.4",
     "workbox-webpack-plugin": "4.2.0"
-  },
-  "scripts": {
-    "start": "cross-env REACT_APP_ENV=dev node scripts/start.js",
-    "build": "node scripts/build.js",
-    "flow": "flow",
-    "build:uat": "cross-env REACT_APP_ENV=uat node scripts/build.js",
-    "test": "node scripts/test.js"
   },
   "eslintConfig": {
     "extends": "react-app"

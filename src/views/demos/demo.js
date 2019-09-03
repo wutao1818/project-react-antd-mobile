@@ -82,12 +82,12 @@ class LoginControl extends React.Component {
     }
 
     return (
-      <div className="demoApp" id="demoApp">
+      <React.Fragment>
         <Header history={this.props.history} docTitle="测试页" />
         <NumberList />
         <Greeting isLoggedIn={isLoggedIn} />
         {button}
-      </div>
+      </React.Fragment>
     );
   }
 }

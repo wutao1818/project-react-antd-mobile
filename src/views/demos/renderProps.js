@@ -59,13 +59,13 @@ class RenderProps extends React.Component {
   render (){
     const { history } = this.props;
     return (
-      <div className="demoApp">
+      <React.Fragment>
         <Header history={history} docTitle="render-props" />
         <h1>非手机模式可以查看</h1>
         <section>
           <MouseTracker/>
         </section>
-      </div>
+      </React.Fragment>
     )
   }
 }

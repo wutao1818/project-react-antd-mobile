@@ -134,7 +134,7 @@ class Price extends React.Component {
     const { history } = this.props;
     const { searchText, isChecked } = this.state;
     return (
-      <div className="demoApp">
+      <React.Fragment>
         <Header history={history} docTitle="价格测试demo页" />
         <section>
           <SearchComp
@@ -149,7 +149,7 @@ class Price extends React.Component {
             apiData={apiDataList}
           />
         </section>
-      </div>
+      </React.Fragment>
     )
   }
 }

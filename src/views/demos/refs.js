@@ -160,7 +160,7 @@ class Refs extends Component {
   render (){
     const { history } = this.props;
     return (
-      <div className="demoApp">
+      <React.Fragment>
         <React.Fragment>
           <Header history={history} docTitle="refs & DOM" />
           <section>
@@ -172,7 +172,7 @@ class Refs extends Component {
             {/*<Parent/>*/}
           </section>
         </React.Fragment>
-      </div>
+      </React.Fragment>
     )
   }
 }

@@ -45,10 +45,10 @@ class ThemedButton extends React.Component {
 // 深层次的组件也能获取到context值
 function Button(props){
   return (
-    <div>
+    <React.Fragment>
       <button>context组件</button>
       <h1>context的值为{props.theme}</h1>
-    </div>
+    </React.Fragment>
   )
 }
 
