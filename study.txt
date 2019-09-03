@@ -1,0 +1,4 @@
+react修改state时候要注意：
+不要使用push,pop,shift,unshift,splice等方法修改数组类型的状态，
+因为这些方法都是在原数组的基础上修改的，
+而concat，slice，filter会返回一个新的数组。

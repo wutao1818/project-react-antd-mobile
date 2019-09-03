@@ -1,0 +1,96 @@
+$txt-color: #fff;
+// 项目入口样式文件，以及部分全局样式
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+  "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+  sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.App {
+  background: #764abc;
+  color: $txt-color;
+  width: 375px;
+  min-height: 100vh;
+  .am-navbar-left-icon {
+    animation: App-logo-spin infinite 2s linear;
+    pointer-events: none;
+  }
+  .am-activity-indicator-tip{
+    font-size: 24px;
+    color: #fff;
+    opacity: 1;
+  }
+  .footer{
+    width: 100%;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+  }
+}
+
+.demoApp {
+  padding-top: 45px;
+  padding-bottom: 40px;
+  min-height: 1000px;
+  section {
+    padding: 10px;
+  }
+  .block {
+    padding: 10px;
+    background: #567549;
+    margin: 5px 0;
+    span {
+      color: #f1c183;
+      font-size: 24px;
+      cursor: pointer;
+      border: 1px solid;
+      border-radius: 6px;
+      padding: 10px;
+      display: inline-block;
+    }
+  }
+  .home-wrap {
+    margin: 10px 0;
+    .home-item {
+      color: $txt-color;
+      font-size: 28px;
+    }
+  }
+  .label-title {
+    color: orange;
+  }
+}
+
+//以下样式是具体页面的，可以挪到具体页面中对应的css
+.clock {
+  color: $txt-color;
+}
+
+// demo ==
+$txt-color: #fff;
+$txt-color-000: #000;
+$txt-color-red: red;
+
+.price-title {
+  font-weight: bold;
+  font-size: 18px;
+  color: $txt-color-000;
+}
+
+.price-title-red {
+  color: $txt-color-red;
+}
+
+// demo ==
