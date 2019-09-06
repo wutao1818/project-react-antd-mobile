@@ -9,6 +9,7 @@ const Context = lazy(() => import('@/views/demos/context'));
 const Refs = lazy(() => import('@/views/demos/refs'));
 const RenderProps = lazy(() => import('@/views/demos/renderProps'));
 const Hoc = lazy(() => import('@/views/demos/hoc'));
+const Skeleton = lazy(() => import('@/views/demos/skeleton'));
 
 const routes = [
   {to: "/home", name: 'home', component: Navpage},
@@ -18,7 +19,8 @@ const routes = [
   {to: "/boilingVerdict", name: 'boilingVerdict-温度输入', component: BoilingVerdict},
   {to: "/context", name: 'context-全局props', component: Context},
   {to: "/refs", name: 'refs', component: Refs},
-  {to: "/renderProps", name: 'render-props', component: RenderProps}
+  {to: "/renderProps", name: 'render-props', component: RenderProps},
+  {to: "/skeleton", name: 'skeleton-骨架屏', component: Skeleton}
 ]
 
 export default routes;

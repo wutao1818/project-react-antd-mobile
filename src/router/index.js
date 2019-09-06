@@ -10,6 +10,7 @@ import {
 import Footer from '@/components/common/footer';
 // 引入页面过渡的loading组件
 import Loading from '@/components/common/loading/loading';
+import Skeleton from '@/components/common/loading/skeleton';
 import routes from './routes';
 import {createBrowserHistory} from "history";
 const history = createBrowserHistory();
@@ -57,7 +58,7 @@ class App extends Component {
       <Router>
         <div className="App">
           <main>
-            <Suspense fallback={<Loading />}>
+            <Suspense fallback={<Skeleton />}>
               <BrowserRouter basename="/test">
                 <Switch>
                   <React.Fragment>
