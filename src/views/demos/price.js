@@ -1,5 +1,6 @@
 import React from 'react';
 import Header from '@/components/common/header';
+import store from '@/store';
 
 // 数据源
 const apiDataList = [
@@ -128,12 +129,21 @@ class Price extends React.Component {
     const value = event.target.checked;
     this.setState({isChecked: value});
   }
+  changeStore(){
+    const { number } = store.getState();
+    let num = number;
+    num += 1;
+    store.dispatch({ type: 'TODOLIST_ADD', number: num });
+  }
   render() {
     const { history } = this.props;
     const { searchText, isChecked } = this.state;
+    const { number } = store.getState();
     return (
       <React.Fragment>
         <Header history={history} docTitle="价格测试demo页" />
+        <h2 style={{color:'red'}}>{`当前有${number}个todolist`}</h2>
+        <button onClick={()=>{ this.changeStore() }}>点我修改store</button>
         <section>
           <SearchComp
             searchText={searchText}

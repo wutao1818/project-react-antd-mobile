@@ -1,19 +1,24 @@
 import React from 'react';
-import { Facebook, Instagram, Code, List, BulletList } from 'react-content-loader';
+import {
+  Facebook,
+  Code,
+  List,
+  BulletList
+} from 'react-content-loader';
 
 class Skeleton extends React.Component {
- render() {
+  render() {
     return (
-        <React.Fragment>
+      <React.Fragment>
           <h1>玩命加载中...</h1>
           <section>
-	          <Facebook animate={false} />
-	          <Code />
-	          <List />
-	          <BulletList />
+            <Facebook animate={false} />
+            <Code />
+            <List />
+            <BulletList />
           </section>
         </React.Fragment>
-      )
+    )
   }
 }
 

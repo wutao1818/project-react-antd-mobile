@@ -1,8 +1,8 @@
 import React from 'react';
 import Header from '@/components/common/header';
-
 import { hostName } from '@/api/config';
-console.log(hostName);
+// console.log(hostName);
+import store from '@/store';
 
 class Todowrap extends React.Component {
   constructor(props){
@@ -24,11 +24,17 @@ class Todowrap extends React.Component {
   // 添加一个todo
   addTodo(){
     const { text } = this.state;
+    const { number } = store.getState();
+    let num = number;
     if(text){
       this.setState(state => ({
         arr: [...this.state.arr, {text}],
         text: ''
-      }));
+      }),()=>{
+        // 2、再通过dispatch分发
+        num += 1;
+        store.dispatch({ type: 'TODOLIST_ADD', number: num });
+      });
     }
   }
 
@@ -71,16 +77,17 @@ class Todowrap extends React.Component {
 class Todolist extends React.Component {
   render() {
     const { history } = this.props;
+    const { number } = store.getState();
     return (
         <React.Fragment>
           <Header history={history} docTitle="todolist页" />
           <section>
             <h1>请输入内容以创建你的todolist</h1>
+            <h2 style={{color:'red'}}>{`当前有${number}个todolist`}</h2>
             <Todowrap />
           </section>
         </React.Fragment>
       )
   }
 }
-
 export default Todolist;

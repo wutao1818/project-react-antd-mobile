@@ -5,15 +5,14 @@ import 'lib-flexible';
 import '@/assets/style/App.scss';
 import * as serviceWorker from './serviceWorker';
 
-ReactDOM.render(<App />, document.getElementById('root'));
-// If you want your app to work offline and load faster, you can change
-// unregister() to register() below. Note this comes with some pitfalls.
-// Learn more about service workers: https://bit.ly/CRA-PWA
+import { Provider } from 'react-redux';
+import store from '@/store';
 
-// 从 DOM 中卸载组件，会将其事件处理器（event handlers）和 state 一并清除
-// setTimeout(()=>{
-//   ReactDOM.unmountComponentAtNode(document.getElementById('root'))
-// },2000)
 
+ReactDOM.render(
+	<Provider store={store}>
+		<App />
+	</Provider>, 
+	document.getElementById('root'));
 
 serviceWorker.unregister();

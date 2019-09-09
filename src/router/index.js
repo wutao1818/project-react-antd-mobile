@@ -6,14 +6,19 @@ import {
   Switch,
   Redirect,
 } from 'react-router-dom';
-// import { connect } from 'react-redux'
+import { connect } from 'react-redux';
+//注意，不要直接这样做，要区分开发环境和生产环境
+import { mapStateToProps, mapDispatchToProps } from '@/store/storeMaps';
+
 import Footer from '@/components/common/footer';
 // 引入页面过渡的loading组件
-import Loading from '@/components/common/loading/loading';
+// import Loading from '@/components/common/loading/loading';
 import Skeleton from '@/components/common/loading/skeleton';
 import routes from './routes';
 import {createBrowserHistory} from "history";
 const history = createBrowserHistory();
+
+
 
 function routerHoc(WrappedComponent, routerList) {
   return class extends React.Component {
@@ -28,7 +33,7 @@ function routerHoc(WrappedComponent, routerList) {
       const {routerList} = this.state;
       const navList = routerList.map((item) => {
         return (
-          <WrappedComponent key={item.to} path={item.to} component={item.component}/>
+          <WrappedComponent store={this.props} key={item.to} path={item.to} component={item.component}/>
         )
       })
       // ... 并使用新数据渲染被包装的组件!
@@ -39,7 +44,7 @@ function routerHoc(WrappedComponent, routerList) {
 }
 
 function routerItem(props) {
-  return <Route path={props.path} component={props.component} history={history}/>
+  return <Route store={props.store} path={props.path} component={props.component} history={history}/>
 }
 
 const RouterHoc = routerHoc(routerItem, routes);
@@ -63,7 +68,7 @@ class App extends Component {
                 <Switch>
                   <React.Fragment>
                     <div className="demoApp">
-                      <RouterHoc/>
+                      <RouterHoc />
                     </div>
                     <Redirect to="/home"/>
                   </React.Fragment>
@@ -78,10 +83,9 @@ class App extends Component {
   }
 }
 
-// //映射Redux全局的state到组件的props上
-// const mapStateToProps = state => ({
-//   showPlayer: state.showPlayer
-// })
-//
-// export default connect(mapStateToProps)(App)
+
+
+
+//映射Redux全局的state到组件的props上
+App = connect(mapStateToProps)(App);
 export default App;
