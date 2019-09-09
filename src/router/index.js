@@ -7,7 +7,6 @@ import {
   Redirect,
 } from 'react-router-dom';
 import { connect } from 'react-redux';
-//注意，不要直接这样做，要区分开发环境和生产环境
 import { mapStateToProps, mapDispatchToProps } from '@/store/storeMaps';
 
 import Footer from '@/components/common/footer';
@@ -17,8 +16,6 @@ import Skeleton from '@/components/common/loading/skeleton';
 import routes from './routes';
 import {createBrowserHistory} from "history";
 const history = createBrowserHistory();
-
-
 
 function routerHoc(WrappedComponent, routerList) {
   return class extends React.Component {
@@ -48,7 +45,6 @@ function routerItem(props) {
 }
 
 const RouterHoc = routerHoc(routerItem, routes);
-
 
 class App extends Component {
   constructor(props) {
@@ -82,9 +78,6 @@ class App extends Component {
     )
   }
 }
-
-
-
 
 //映射Redux全局的state到组件的props上
 App = connect(mapStateToProps)(App);

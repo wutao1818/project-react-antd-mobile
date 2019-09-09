@@ -1,6 +1,5 @@
 import { createStore } from 'redux';
 
-
 /**
  * 这是一个 reducer，形式为 (state, action) => state 的纯函数。
  * 描述了 action 如何把 state 转变成下一个 state。
