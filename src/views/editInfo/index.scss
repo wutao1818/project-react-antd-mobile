@@ -1,0 +1,21 @@
+.edit-info-bg{
+	background: #fff;
+	color: #000;
+	.am-list-header{
+		font-size: 18px;
+	}
+	.am-list-body{
+		.am-list-item{
+			line-height: 60px;
+			min-height: 60px;
+			.am-list-line{
+				padding-right: 0;
+			}
+		}
+	}
+	.input-right{
+		input{
+			text-align: right;
+		}
+	}
+}

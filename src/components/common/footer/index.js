@@ -6,7 +6,7 @@ class Footer extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      selectedTab: 'redTab',
+      selectedTab: 'blueTab',
       hidden: false,
       fullScreen: false,
     };
@@ -52,8 +52,8 @@ class Footer extends React.Component {
           </TabBar.Item>
 
           <TabBar.Item
-            title="高阶组件"
-            key="高阶组件"
+            title="个人信息"
+            key="个人信息"
             icon={<div style={{
               width: '22px',
               height: '22px',
@@ -74,7 +74,7 @@ class Footer extends React.Component {
               this.setState({
                 selectedTab: 'redTab',
               });
-              history.push(`/hoc`);
+              history.push(`/editInfo`);
             }}
             data-seed="logId"
           >

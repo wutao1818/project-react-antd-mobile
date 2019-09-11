@@ -10,6 +10,7 @@ const Refs = lazy(() => import('@/views/demos/refs'));
 const RenderProps = lazy(() => import('@/views/demos/renderProps'));
 const Hoc = lazy(() => import('@/views/demos/hoc'));
 const Skeleton = lazy(() => import('@/views/demos/skeleton'));
+const EditInfo = lazy(() => import('@/views/editInfo/editInfo'));
 
 const routes = [
   {to: "/home", name: 'home', component: Navpage},
@@ -20,7 +21,8 @@ const routes = [
   {to: "/context", name: 'context-全局props', component: Context},
   {to: "/refs", name: 'refs', component: Refs},
   {to: "/renderProps", name: 'render-props', component: RenderProps},
-  {to: "/skeleton", name: 'skeleton-骨架屏', component: Skeleton}
+  {to: "/skeleton", name: 'skeleton-骨架屏', component: Skeleton},
+  {to: "/editInfo", name: 'editInfo-编辑个人资料', component: EditInfo}
 ]
 
 export default routes;
